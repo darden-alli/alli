@@ -29,5 +29,6 @@ deploy:
   region: us-east-1
   app: Alli
   env: Alli-env
+  bucket_name: elasticbeanstalk-us-east-1-559807477146
   on:
     repo: darden-alli/alli
