@@ -21,3 +21,13 @@ script:
 - curl localhost
 after_script:
 - docker-compose down
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAYEVZAGWNIKIIIRCL
+  secret_access_key:
+    secure: 2WxDjkb5dY9k94XcZT4o/N3dG6WBhna5GfFwBnFFG9s34t5cCnJjDSXQYIgo/SQ0CiMJZDGuA02mGWHtB5uGTdyXJFUiLh0lGrguDAvPwG+uFwZ/Y69yGM5AnYjQs31VklLPlyQ1OLwTyNvsNQhwV9vLICacV/EA2oTgsTjH/g5lC/v3CfAdsp5WuBYU+eePfJTJFnPjsH3Vs7ljxArLZFL6LlMFMTDfz2Knuhh4wQD5nq68/BxPyhfS4Of0zMlTFo+8uqkpUoooZYEayUSPh3577tj5WIotmDNO4Rhf/8a2K678vVWN4XoBMlY4lKtRBjpJDOmCnGifyiWiNNjrKUzo1vRJYd/UyyJhueCewHQLaCTkNDt2CvlO2OU8FDNMcws3SlpRWwaknmkw5tQZnuSV5UsyVEZVV5l2FKi6NpLGK36LqmAajpHXR8rpMt2qpmdXKK8Tox/m9ICuVBEHUsLIYypJv4phm+moTqT18z9Fas6wimJXnuqHFOw3snI27JPYtCkE3PQl8bf7tdNEXhXcN1pjiw6lnI4Z9XyByvuS3E8unJPzcNqwvZmj3/EXuqGMdagnSlP2p8frG3HYc7hGIvaYhr6FnCg+ilRWiC47t4f7JqDKJMQ0mZC1uvj1qPT3S+W1iSVneopjg0VZMnqCWF0vVBK4gBtoYMduFUA=
+  region: us-east-1
+  app: Alli
+  env: Alli-env
+  on:
+    repo: darden-alli/alli
