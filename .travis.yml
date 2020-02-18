@@ -28,12 +28,11 @@ after_script:
 - docker-compose down
 deploy:
   provider: elasticbeanstalk
-  access_key_id: AKIAYEVZAGWNKTWPCJJ6
+  access_key_id:
+    secure: $AWS_ACCESS_KEY_ID
   secret_access_key:
-    secure: Y1N9mbWrDKGOVUFGDymejm5XsT+T8grTPkhNUGYJNWQbCoAk0fsb/+x8jOOUzO4GHMSYaNJyHtTp9jnSTN1JoC3clWLgbI4MlG7vZFghuYRf/zH9Xtc/2QUQXUtAGJJ8gi47+dxfv4Y+aA2pR+ifwq2AmpWmr3ExM0KFcp/4uPhOLZahsiV9YoqMWV0rAky6dGOT1lZfEEzw7lzpOYCeezHfpDw/3uwec2LUYL2x1TTgyl+xroic/SWpmH/8VjDbWTsUaXXh9vMC6cNUT6qU9bShD0escKshhz++UkTqcUOmpv50CNs1Z7W6oy+GdBgDe2fZ8ISM3fnFP0bb0BQePw6qq9ko0sXT//NFgJ6UfRNQLVu1JRqJYQjPZoNq3nA25nUU0mkVh32qETdem3BPx0dYzagEuAUYlfSldlSNLcqjmMkQpO+9amm0Ff9WkpO2LEULYyq0K49ZtDt4vPuEMPT5nLXYcbL9yGCzAgXAxODB5cb5BtSuxtGKe14HIFe8P45tcIjvx3potGdtM7dySf4O0M3E/4Y2nVZQuMb8R29ryVrNQJm5uI7vjZs8K/J6UZOVtQ5MkT0GpG5PFbqPZbsUIPcHjz0KMSh5hvNCOmyKDtMe89NNFfRHjXILDww9Fz/Btj97ALsL8Y1i/t8/j0FO8T5v+/wdiYU8vOUlC9U=
-  region: us-east-1
-  app: Alli
-  env: Alli-env
-  bucket_name: elasticbeanstalk-us-east-1-559807477146
-  on:
-    repo: darden-alli/alli
+    secure: $AWS_ACCESS_KEY_SECRET
+  region: $AWS_REGION
+  app: $AWS_EB_APPLICATION
+  env: $AWS_EB_ENVIRONMENT
+  bucket_name: $AWS_EB_S3_BUCKET
