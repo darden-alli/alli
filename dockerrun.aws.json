@@ -2,25 +2,13 @@
   "AWSEBDockerrunVersion": 2,
   "volumes": [
     {
-      "name": "backend",
+      "name": "postgres_data",
       "host": {
-        "sourcePath": "./backend"
+        "sourcePath": "/var/lib/postgresql/data"
       }
     },
     {
-      "name": "frontend",
-      "host": {
-        "sourcePath": "./frontend/frontend/src"
-      }
-    },
-    {
-      "name": "postgres",
-      "host": {
-        "sourcePath": ""
-      }
-    },
-    {
-      "name": "server",
+      "name": "nginx-proxy-conf",
       "host": {
         "sourcePath": "/var/app/current/proxy/conf.d"
       }
@@ -29,33 +17,21 @@
   "containerDefinitions": [
     {
       "name": "backend",
-      "image": "alli_backend",
+      "image": "559807477146.dkr.ecr.us-east-1.amazonaws.com/alli:backend",
       "essential": true,
-      "memory": 128,
-      "mountPoints": [
-        {
-          "sourceVolume": "backend",
-          "containerPath": "/home/app/backend",
-          "readOnly": true
-        }
+      "memory": 128
       ]
     },
     {
       "name": "frontend",
-      "image": "alli_frontend",
+      "image": "559807477146.dkr.ecr.us-east-1.amazonaws.com/alli:frontend",
       "essential": true,
-      "memory": 128,
-      "mountPoints": [
-        {
-          "sourceVolume": "frontend",
-          "containerPath": "/home/app/frontend/src",
-          "readOnly": true
-        }
+      "memory": 128
       ]
     },
     {
       "name": "server",
-      "image": "alli_server",
+      "image": "559807477146.dkr.ecr.us-east-1.amazonaws.com/alli:server",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -77,6 +53,19 @@
         {
           "sourceVolume": "awseb-logs-nginx-proxy",
           "containerPath": "/var/log/nginx"
+        }
+      ]
+    },
+    {
+      "name": "postgres",
+      "image": "postgres:latest",
+      "essential": true,
+      "memory": 128,
+      "mountPoints": [
+        {
+          "sourceVolume": "postgres",
+          "containerPath": "/var/lib/postgresql/data",
+          "readOnly": true
         }
       ]
     }
