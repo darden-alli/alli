@@ -1,0 +1,84 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "backend",
+      "host": {
+        "sourcePath": "./backend"
+      }
+    },
+    {
+      "name": "frontend",
+      "host": {
+        "sourcePath": "./frontend/frontend/src"
+      }
+    },
+    {
+      "name": "postgres",
+      "host": {
+        "sourcePath": ""
+      }
+    },
+    {
+      "name": "server",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "backend",
+      "image": "alli_backend",
+      "essential": true,
+      "memory": 128,
+      "mountPoints": [
+        {
+          "sourceVolume": "backend",
+          "containerPath": "/home/app/backend",
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "image": "alli_frontend",
+      "essential": true,
+      "memory": 128,
+      "mountPoints": [
+        {
+          "sourceVolume": "frontend",
+          "containerPath": "/home/app/frontend/src",
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "image": "alli_server",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "backend",
+        "frontend"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "awseb-logs-nginx-proxy",
+          "containerPath": "/var/log/nginx"
+        }
+      ]
+    }
+  ]
+}
