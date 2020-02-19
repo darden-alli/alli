@@ -1,7 +1,7 @@
 Introduction
 ----
 
-A skeleton docker compose setup for quickly building Rails API applications with React Frontend.
+A skeleton docker compose setup for quickly building Rails API applications with React Frontend + travis & eb integration
 
 Features
 ----
