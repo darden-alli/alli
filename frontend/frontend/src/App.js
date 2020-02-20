@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Admin from './components/Admin';
-import Medical from './components/Medical'
+import Medical from './components/Medical';
 import './App.css';
 
 const API_ROUTE = '/api/v1';
