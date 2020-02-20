@@ -50,6 +50,15 @@ class App extends Component {
             <Route path="/medical">
               <Medical />
             </Route>
+            <Route path="/resources">
+              <Resources />
+            </Route>
+            <Route path="/confidential">
+              <Confidential />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
