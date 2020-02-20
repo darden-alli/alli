@@ -49,6 +49,9 @@ class App extends Component {
             <Route path="/">
               <Home />
             </Route>
+            <Route path="/medical">
+              <Home />
+            </Route>
           </Switch>
         </div>
         </Router>
