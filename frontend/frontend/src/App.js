@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Admin from './components/Admin';
 import Medical from './components/Medical';
 import Resources from './components/Resources';
+import Confidential from './components/Confidential';
 import About from './components/About';
 import './App.css';
 
