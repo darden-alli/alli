@@ -50,7 +50,7 @@ class App extends Component {
               <Home />
             </Route>
             <Route path="/medical">
-              <Form />
+              <Admin />
             </Route>
           </Switch>
         </div>
