@@ -7,6 +7,8 @@ import {
 import Home from './components/Home';
 import Admin from './components/Admin';
 import Medical from './components/Medical';
+import Resources from './components/Resources';
+import About from './components/About';
 import './App.css';
 
 const API_ROUTE = '/api/v1';
