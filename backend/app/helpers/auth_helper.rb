@@ -9,7 +9,8 @@ module AuthHelper
   SCOPES = [ 'r_liteprofile',
              'r_emailaddress']
 
-  REDIRECT_URI = "http://#{ENV["HOST"]}/api/v1/auth/linkedin/callback"
+  host = ENV.fetch("HOST")
+  REDIRECT_URI = "http://#{host}/api/v1/auth/linkedin/callback"
 
   # Generates the login URL for the app.
   def get_login_url
