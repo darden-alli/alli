@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Form from './Form';
+import Dashboard from './Dashboard';
 
 function Copyright() {
   return (
@@ -126,6 +127,7 @@ export default function Admin() {
             )}
           </Grid>
         </Container>
+        <Dashboard />
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
