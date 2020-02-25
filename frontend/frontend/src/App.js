@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Home from './components/Home';
+//import Home from './components/Home';
+import Index from './components/landingPage/Home'
 import Admin from './components/Admin';
 import Medical from './components/Medical';
 import Resources from './components/Resources';
@@ -63,7 +64,7 @@ class App extends Component {
               <About />
             </Route>
             <Route path="/">
-              <Home />
+              <Index />
             </Route>
           </Switch>
         </div>
