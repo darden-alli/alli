@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import backgroundImage from '../../../../images/journey.jpg';
@@ -27,8 +33,36 @@ const styles = theme => ({
   },
 });
 
+const SCHOOLS = [
+  {
+    fullName: 'University of Virginia',
+    shortName: 'UVA'
+  },
+  {
+    fullName: 'Virginia Tech',
+    shortName: 'VT'
+  },
+  {
+    fullName: 'Piedmont Virginia Community College',
+    shortName: 'PVCC'
+  }
+]
+
 function ProductHero(props) {
   const { classes } = props;
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  }
+
+  const handleClose = () => {
+    setOpen(false);
+  }
+
+  const handleListItemClick = (school) => {
+    console.log(school);
+  }
 
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
@@ -45,9 +79,24 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
+        onClick={handleClick}
       >
         School Selector
       </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+      >
+        <DialogContent>
+          <List>
+            {SCHOOLS.map(school => (
+              <ListItem button onClick={() => handleListItemClick(school.shortName)} key={school.shortName}>
+                <ListItemText primary={school.fullName} />
+              </ListItem>
+            ))}
+          </List>
+        </DialogContent>
+      </Dialog>
       <Typography variant="body2" color="inherit" className={classes.more}>
         Discover the experience
       </Typography>
