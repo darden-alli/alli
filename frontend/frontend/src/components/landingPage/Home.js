@@ -16,7 +16,6 @@ function Index() {
       <AppAppBar />
       <ProductHero />
       <ProductValues />
-      <ProductHowItWorks />
       <AppFooter />
     </React.Fragment>
   );
