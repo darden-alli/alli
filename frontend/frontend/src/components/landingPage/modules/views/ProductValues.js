@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import LockIcon from '@material-ui/icons/Lock';
+import ListIcon from '@material-ui/icons/List';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 const productName='Alli';
 
@@ -53,11 +56,7 @@ function ProductValues(props) {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src=""
-                alt="confidentiality"
-              />
+              <LockIcon fontSize="large" />
               <Typography variant="h6" className={classes.title}>
                 Your Confidentiality
               </Typography>
@@ -69,11 +68,7 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src="choices"
-                alt="choices"
-              />
+              <ListIcon fontSize="large" />
               <Typography variant="h6" className={classes.title}>
                 Your Choices
               </Typography>
@@ -85,11 +80,7 @@ function ProductValues(props) {
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src=""
-                alt="decisions"
-              />
+              <EmojiObjectsIcon fontSize="large" />
               <Typography variant="h6" className={classes.title}>
                 Your Decisions
               </Typography>
