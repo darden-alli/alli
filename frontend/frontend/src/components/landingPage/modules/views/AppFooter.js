@@ -5,13 +5,15 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 function Copyright() {
   return (
     <React.Fragment>
       {'© '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Alli
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -70,6 +72,10 @@ const LANGUAGES = [
     code: 'fr-FR',
     name: 'Français',
   },
+  {
+    code: 'es-ES',
+    name: 'Español'
+  }
 ];
 
 export default function AppFooter() {
@@ -78,7 +84,7 @@ export default function AppFooter() {
   return (
     <Typography component="footer" className={classes.root}>
       <Container className={classes.container}>
-        <Grid container spacing={5}>
+        <Grid container spacing={5} justify="center">
           <Grid item xs={6} sm={4} md={3}>
             <Grid
               container
@@ -88,14 +94,14 @@ export default function AppFooter() {
               spacing={2}
             >
               <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
-                  <img src="/static/themes/onepirate/appFooterFacebook.png" alt="Facebook" />
+                <a href="https://facebook.com/alli" className={classes.icon}>
+                  <FacebookIcon fontSize="large" />
                 </a>
-                <a href="https://twitter.com/MaterialUI" className={classes.icon}>
-                  <img src="/static/themes/onepirate/appFooterTwitter.png" alt="Twitter" />
+                <a href="https://twitter.com/alli" className={classes.icon}>
+                  <TwitterIcon fontSize="large" />
                 </a>
               </Grid>
-              <Grid item>
+              <Grid item className={classes.icons}>
                 <Copyright />
               </Grid>
             </Grid>
@@ -106,10 +112,10 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                <Link href="/terms/">Terms</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                <Link href="/privacy/">Privacy</Link>
               </li>
             </ul>
           </Grid>
@@ -130,27 +136,6 @@ export default function AppFooter() {
                 </option>
               ))}
             </TextField>
-          </Grid>
-          <Grid item>
-            <Typography variant="caption">
-              {'Icons made by '}
-              <Link href="https://www.freepik.com" rel="sponsored" title="Freepik">
-                Freepik
-              </Link>
-              {' from '}
-              <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
-                www.flaticon.com
-              </Link>
-              {' is licensed by '}
-              <Link
-                href="https://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC 3.0 BY
-              </Link>
-            </Typography>
           </Grid>
         </Grid>
       </Container>
