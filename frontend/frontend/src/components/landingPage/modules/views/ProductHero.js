@@ -1,4 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
@@ -106,7 +112,7 @@ function ProductHero(props) {
   };
 
   const handleListItemClick = (school) => {
-    console.log(school);
+    console.log("/"+school.shortName);
   };
 
   return (
@@ -137,7 +143,7 @@ function ProductHero(props) {
         <DialogContent dividers={true}>
           <List>
             {SCHOOLS.map(school => (
-              <ListItem button onClick={() => handleListItemClick(school.shortName)} key={school.shortName}>
+              <ListItem button onClick={() => handleListItemClick(school)} key={school.shortName}>
                 <ListItemText primary={school.fullName} />
               </ListItem>
             ))}
