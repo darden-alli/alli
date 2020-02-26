@@ -107,7 +107,7 @@ export default function AppFooter() {
             </Grid>
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
-            <Typography variant="h6" marked="left" gutterBottom>
+            <Typography variant="h6" gutterBottom>
               Legal
             </Typography>
             <ul className={classes.list}>
@@ -120,7 +120,7 @@ export default function AppFooter() {
             </ul>
           </Grid>
           <Grid item xs={6} sm={8} md={4}>
-            <Typography variant="h6" marked="left" gutterBottom>
+            <Typography variant="h6" gutterBottom>
               Language
             </Typography>
             <TextField
