@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
 import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import List from '@material-ui/core/List';
@@ -45,6 +46,50 @@ const SCHOOLS = [
   {
     fullName: 'Piedmont Virginia Community College',
     shortName: 'PVCC'
+  },
+  {
+    fullName: 'Virginia Commonwealth University',
+    shortName: 'VCU'
+  },
+  {
+    fullName: 'Old Dominion University',
+    shortName: 'ODU'
+  },
+  {
+    fullName: 'James Madison University',
+    shortName: 'JMU'
+  },
+  {
+    fullName: 'Liberty University',
+    shortName: 'LU'
+  },
+  {
+    fullName: 'William and Mary',
+    shortName: 'W&M'
+  },
+  {
+    fullName: 'University of Richmond',
+    shortName: 'UR'
+  },
+  {
+    fullName: 'American University',
+    shortName: 'American'
+  },
+  {
+    fullName: 'Georgetown University',
+    shortName: 'Georgetown'
+  },
+  {
+    fullName: 'Washington and Lee University',
+    shortName: 'W&L'
+  },
+  {
+    fullName: 'Virginia Military Institute',
+    shortName: 'VMI'
+  },
+  {
+    fullName: 'Radford University',
+    shortName: 'RU'
   }
 ]
 
@@ -52,17 +97,17 @@ function ProductHero(props) {
   const { classes } = props;
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleClickOpen = () => {
     setOpen(true);
-  }
+  };
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   const handleListItemClick = (school) => {
     console.log(school);
-  }
+  };
 
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
@@ -79,15 +124,17 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
-        onClick={handleClick}
+        onClick={handleClickOpen}
       >
         School Selector
       </Button>
       <Dialog
         open={open}
         onClose={handleClose}
+        scroll="paper"
       >
-        <DialogContent>
+        <DialogTitle>Which school do you attend?</DialogTitle>
+        <DialogContent dividers={true}>
           <List>
             {SCHOOLS.map(school => (
               <ListItem button onClick={() => handleListItemClick(school.shortName)} key={school.shortName}>
@@ -96,6 +143,9 @@ function ProductHero(props) {
             ))}
           </List>
         </DialogContent>
+        <DialogActions>
+          <Button>This action</Button>
+        </DialogActions>
       </Dialog>
       <Typography variant="body2" color="inherit" className={classes.more}>
         Discover the experience
