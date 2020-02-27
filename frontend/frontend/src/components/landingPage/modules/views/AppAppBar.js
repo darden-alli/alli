@@ -49,7 +49,7 @@ function AppAppBar(props) {
             className={classes.title}
             href="/"
           >
-            {'alli'}
+            {props.title}
           </Link>
           <div className={classes.right}>
           </div>
