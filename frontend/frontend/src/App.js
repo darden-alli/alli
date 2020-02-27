@@ -104,7 +104,6 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-        <div>
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
@@ -115,13 +114,12 @@ class App extends Component {
             <Route path="/terms" component={Terms} />
             <Route path="/privacy" component={Privacy} />
             {SCHOOLS.map(school => (
-              <Route path={"/"+school.shortName}>
+              <Route path={"/"+school.shortName} key={school.shortName}>
                 <SchoolPage school={school} />
               </Route>
             ))}
             <Route component={Error} />
           </Switch>
-        </div>
         </Router>
       </div>
     );
