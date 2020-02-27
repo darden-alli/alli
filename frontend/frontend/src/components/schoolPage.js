@@ -9,7 +9,7 @@ import AppAppBar from './landingPage/modules/views/AppAppBar';
 function SchoolPage(props) {
   return (
     <React.Fragment>
-      <AppAppBar title={props.school.fullName} />
+      <AppAppBar title={props.school.shortName} />
       <ProductHero
         mainText="Oh no!"
         secondaryText= {`We're not at ${props.school.fullName} yet,
