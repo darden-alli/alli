@@ -8,9 +8,7 @@ import {
 import SchoolPage from './components/schoolPage';
 import Index from './components/landingPage/Home';
 import Admin from './components/Admin';
-import Medical from './components/Medical';
 import Resources from './components/Resources';
-import Confidential from './components/Confidential';
 import About from './components/About';
 import Terms from './components/landingPage/Terms';
 import Privacy from './components/landingPage/Privacy';
