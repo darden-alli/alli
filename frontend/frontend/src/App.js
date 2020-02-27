@@ -11,6 +11,8 @@ import Medical from './components/Medical';
 import Resources from './components/Resources';
 import Confidential from './components/Confidential';
 import About from './components/About';
+import Terms from './components/landingPage/Terms';
+import Privacy from './components/landingPage/Privacy';
 import Error from './components/Error';
 import './App.css';
 
@@ -55,6 +57,8 @@ class App extends Component {
             <Route path="/medical" component={Medical} />
             <Route path="/resources" component={Resources} />
             <Route path="/confidential" component={Confidential} />
+            <Route path="/terms" component={Terms} />
+            <Route path="/privacy" component={Privacy} />
             <Route component={Error} />
           </Switch>
         </div>

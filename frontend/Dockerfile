@@ -10,6 +10,7 @@ RUN yarn install --silent
 RUN yarn add react-router-dom --silent
 RUN yarn add @material-ui/core --silent
 RUN yarn add @material-ui/icons --silent
+RUN yarn add markdown-to-jsx --silent
 RUN yarn add recharts --silent
 COPY ./frontend /home/app/frontend
 CMD ["yarn", "start"]
