@@ -10,7 +10,10 @@ function Index() {
   return (
     <React.Fragment>
       <AppAppBar title="Alli"/>
-      <ProductHero />
+      <ProductHero
+        mainText="We're here for you"
+        secondaryText="Discover the experience"
+      />
       <ProductValues />
       <AppFooter />
     </React.Fragment>
