@@ -113,9 +113,7 @@ class App extends Component {
             <Route path="/" component={Index} exact />
             <Route path="/about" component={About} />
             <Route path="/admin" component={Admin} />
-            <Route path="/medical" component={Medical} />
             <Route path="/resources" component={Resources} />
-            <Route path="/confidential" component={Confidential} />
             <Route path="/terms" component={Terms} />
             <Route path="/privacy" component={Privacy} />
             {SCHOOLS.map(school => (
