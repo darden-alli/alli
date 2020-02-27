@@ -10,7 +10,11 @@ function SchoolPage(props) {
   return (
     <React.Fragment>
       <AppAppBar title={props.school.fullName} />
-      <ProductHero />
+      <ProductHero
+        mainText="Oh no!"
+        secondaryText= {`We're not at ${props.school.fullName} yet,
+        but we're launching new schools weekly - check back soon!`}
+      />
       <ProductValues />
       <AppFooter />
     </React.Fragment>

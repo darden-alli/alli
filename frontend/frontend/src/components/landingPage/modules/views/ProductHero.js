@@ -38,7 +38,7 @@ function ProductHero(props) {
       <Typography color="inherit" align="center" variant="h2" marked="center">
         {props.mainText}
       </Typography>
-      {useLocation().pathname == '/' ? <SchoolSelector /> : null}
+      {useLocation().pathname === '/' ? <SchoolSelector /> : null}
       <Typography variant="body2" color="inherit" className={classes.more}>
         {props.secondaryText}
       </Typography>
