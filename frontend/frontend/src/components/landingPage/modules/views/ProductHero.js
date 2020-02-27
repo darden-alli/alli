@@ -1,10 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
@@ -111,10 +106,6 @@ function ProductHero(props) {
     setOpen(false);
   };
 
-  const handleListItemClick = (school) => {
-    console.log("/"+school.shortName);
-  };
-
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
@@ -143,8 +134,10 @@ function ProductHero(props) {
         <DialogContent dividers={true}>
           <List>
             {SCHOOLS.map(school => (
-              <ListItem button onClick={() => handleListItemClick(school)} key={school.shortName}>
-                <ListItemText primary={school.fullName} />
+              <ListItem button key={school.shortName}>
+                <Link to={"/"+school.shortName}>
+                  <ListItemText primary={school.fullName} />
+                </Link>
               </ListItem>
             ))}
           </List>

@@ -11,6 +11,7 @@ import Medical from './components/Medical';
 import Resources from './components/Resources';
 import Confidential from './components/Confidential';
 import About from './components/About';
+import Error from './components/Error';
 import './App.css';
 
 const API_ROUTE = '/api/v1';
@@ -48,24 +49,13 @@ class App extends Component {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/admin">
-              <Admin />
-            </Route>
-            <Route path="/medical">
-              <Medical />
-            </Route>
-            <Route path="/resources">
-              <Resources />
-            </Route>
-            <Route path="/confidential">
-              <Confidential />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Index />
-            </Route>
+            <Route path="/" component={Index} exact />
+            <Route path="/about" component={About} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/medical" component={Medical} />
+            <Route path="/resources" component={Resources} />
+            <Route path="/confidential" component={Confidential} />
+            <Route component={Error} />
           </Switch>
         </div>
         </Router>
