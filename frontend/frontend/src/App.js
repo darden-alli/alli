@@ -5,7 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 //import Home from './components/Home';
-import Index from './components/landingPage/Home'
+import SchoolPage from './components/schoolPage';
+import Index from './components/landingPage/Home';
 import Admin from './components/Admin';
 import Medical from './components/Medical';
 import Resources from './components/Resources';
@@ -18,6 +19,64 @@ import './App.css';
 
 const API_ROUTE = '/api/v1';
 // const FRONTEND_ROUTES = [];
+const SCHOOLS = [
+  {
+    fullName: 'University of Virginia',
+    shortName: 'UVA'
+  },
+  {
+    fullName: 'Virginia Tech',
+    shortName: 'VT'
+  },
+  {
+    fullName: 'Piedmont Virginia Community College',
+    shortName: 'PVCC'
+  },
+  {
+    fullName: 'Virginia Commonwealth University',
+    shortName: 'VCU'
+  },
+  {
+    fullName: 'Old Dominion University',
+    shortName: 'ODU'
+  },
+  {
+    fullName: 'James Madison University',
+    shortName: 'JMU'
+  },
+  {
+    fullName: 'Liberty University',
+    shortName: 'LU'
+  },
+  {
+    fullName: 'William and Mary',
+    shortName: 'W&M'
+  },
+  {
+    fullName: 'University of Richmond',
+    shortName: 'UR'
+  },
+  {
+    fullName: 'American University',
+    shortName: 'American'
+  },
+  {
+    fullName: 'Georgetown University',
+    shortName: 'Georgetown'
+  },
+  {
+    fullName: 'Washington and Lee University',
+    shortName: 'W&L'
+  },
+  {
+    fullName: 'Virginia Military Institute',
+    shortName: 'VMI'
+  },
+  {
+    fullName: 'Radford University',
+    shortName: 'RU'
+  }
+]
 
 class App extends Component {
   constructor() {
@@ -59,6 +118,11 @@ class App extends Component {
             <Route path="/confidential" component={Confidential} />
             <Route path="/terms" component={Terms} />
             <Route path="/privacy" component={Privacy} />
+            {SCHOOLS.map(school => (
+              <Route path={"/"+school.shortName}>
+                <SchoolPage school={school} />
+              </Route>
+            ))}
             <Route component={Error} />
           </Switch>
         </div>
