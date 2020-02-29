@@ -7,11 +7,11 @@ import {
 //import Home from './components/Home';
 import SchoolPage from './components/schoolPage';
 import Index from './components/landingPage/Home';
+import Terms from './components/landingPage/Terms';
+import Privacy from './components/landingPage/Privacy';
 import Admin from './components/Admin';
 import Resources from './components/Resources';
 import About from './components/About';
-import Terms from './components/landingPage/Terms';
-import Privacy from './components/landingPage/Privacy';
 import Error from './components/Error';
 import './App.css';
 
@@ -107,7 +107,7 @@ class App extends Component {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/" component={Index} exact />
+            <Route exact path="/" component={Index} />
             <Route path="/about" component={About} />
             <Route path="/admin" component={Admin} />
             <Route path="/resources" component={Resources} />
