@@ -13,10 +13,12 @@ import Privacy from './components/landingPage/Privacy';
 import Admin from './components/Admin';
 import Resources from './components/Resources';
 import About from './components/About';
-import Counseling from './components/Counseling';
-import Medical from './components/Medical';
-import Perk from './components/Perk';
-import Error from './components/Error';
+import Medical from './components/resources/Medical';
+import Police from './components/resources/Police';
+import Counseling from './components/resources/Counseling';
+import Reporting from './components/resources/Reporting';
+import Support from './components/resources/Support';
+import Perk from './components/resources/Perk';
 import './App.css';
 
 const API_ROUTE = '/api/v1';
@@ -79,6 +81,13 @@ const SCHOOLS = [
     shortName: 'RU'
   }
 ]
+const RESOURCE_TYPES = [
+  {type: 'medical', component: Medical},
+  {type: 'police', component: Police},
+  {type: 'counseling', component: Counseling},
+  {type: 'reporting', component: Reporting},
+  {type: 'support', component: Support}
+]
 
 class App extends Component {
   constructor() {
@@ -112,19 +121,30 @@ class App extends Component {
               renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/" component={Index} />
-            <Route path="/about" component={About} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/resources" component={Resources} />
-            <Route path="/terms" component={Terms} />
-            <Route path="/privacy" component={Privacy} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/admin" component={Admin} />
+            <Route exact path="/resources" component={Resources} />
+            <Route exact path="/terms" component={Terms} />
+            <Route exact path="/privacy" component={Privacy} />
             {SCHOOLS.map(school => (
               <Route
                 exact
                 path={"/"+school.shortName}
+                key={"/"+school.shortName}
                 render={(props) => <SchoolPage school={school} />}
-                key={school.shortName}
               />
             ))}
+            {SCHOOLS.map(school => (
+              RESOURCE_TYPES.map(resource => (
+                <Route
+                  exact
+                  path={"/"+school.shortName+"/"+resource.type}
+                  key={"/"+school.shortName+"/"+resource.type}
+                  component={resource.component}
+                />
+              ))
+            ))}
+            <Redirect from="*" to="/" />
           </Switch>
         </Router>
       </div>
