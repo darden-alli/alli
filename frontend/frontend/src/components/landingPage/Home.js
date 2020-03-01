@@ -9,11 +9,8 @@ import AppAppBar from './modules/views/AppAppBar';
 function Index() {
   return (
     <React.Fragment>
-      <AppAppBar title="Alli"/>
-      <ProductHero
-        mainText="We're here for you"
-        secondaryText="Discover the experience"
-      />
+      <AppAppBar />
+      <ProductHero />
       <ProductValues />
       <AppFooter />
     </React.Fragment>

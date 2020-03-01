@@ -46,6 +46,11 @@ function ProductHero(props) {
   );
 }
 
+ProductHero.defaultProps = {
+  mainText: "We're here for you",
+  secondaryText: "Discover the experience"
+}
+
 ProductHero.propTypes = {
   classes: PropTypes.object.isRequired,
 };

@@ -60,6 +60,10 @@ function AppAppBar(props) {
   );
 }
 
+AppAppBar.defaultProps = {
+  title: "Alli"
+}
+
 AppAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
