@@ -26,59 +26,73 @@ const API_ROUTE = '/api/v1';
 const SCHOOLS = [
   {
     fullName: 'University of Virginia',
-    shortName: 'UVA'
+    shortName: 'UVA',
+    launched: true
   },
   {
     fullName: 'Virginia Tech',
-    shortName: 'VT'
+    shortName: 'VT',
+    launched: false
   },
   {
     fullName: 'Piedmont Virginia Community College',
-    shortName: 'PVCC'
+    shortName: 'PVCC',
+    launched: false
   },
   {
     fullName: 'Virginia Commonwealth University',
-    shortName: 'VCU'
+    shortName: 'VCU',
+    launched: false
   },
   {
     fullName: 'Old Dominion University',
-    shortName: 'ODU'
+    shortName: 'ODU',
+    launched: false
   },
   {
     fullName: 'James Madison University',
-    shortName: 'JMU'
+    shortName: 'JMU',
+    launched: false
   },
   {
     fullName: 'Liberty University',
-    shortName: 'LU'
+    shortName: 'LU',
+    launched: false
   },
   {
     fullName: 'William and Mary',
-    shortName: 'W&M'
+    shortName: 'W&M',
+    launched: false
   },
   {
     fullName: 'University of Richmond',
-    shortName: 'UR'
+    shortName: 'UR',
+    launched: false
   },
   {
     fullName: 'American University',
-    shortName: 'American'
+    shortName: 'American',
+    launched: false
   },
   {
     fullName: 'Georgetown University',
-    shortName: 'Georgetown'
+    shortName: 'Georgetown',
+    launched: false
   },
   {
     fullName: 'Washington and Lee University',
-    shortName: 'W&L'
+    shortName: 'W&L',
+    launched: false
   },
   {
     fullName: 'Virginia Military Institute',
-    shortName: 'VMI'
+    shortName: 'VMI',
+    launched: false
   },
   {
     fullName: 'Radford University',
-    shortName: 'RU'
+    shortName: 'RU',
+    launched: false
   }
 ]
 const RESOURCE_TYPES = [

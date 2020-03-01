@@ -11,12 +11,11 @@ function SchoolPage(props) {
   const mainNotFound="Oh no!";
   const secondaryNotFound=`We're not at ${props.school.fullName} yet,
   but we're launching new schools weekly - check back soon!`;
-  const found=true;
 
   return (
     <React.Fragment>
       <AppAppBar title={props.school.shortName} />
-      {found
+      {props.school.launched
       ? <ProductCategories />
       : <ProductHero
         mainText={mainNotFound}
