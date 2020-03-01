@@ -126,7 +126,7 @@ function SchoolSelector(props) {
           <List>
             {SCHOOLS.map(school => (
               <ListItem button key={school.shortName}>
-                <Link to={"/"+school.shortName}>
+                <Link to={"/"+school.shortName} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                   <ListItemText primary={school.fullName} />
                 </Link>
               </ListItem>
@@ -134,7 +134,7 @@ function SchoolSelector(props) {
           </List>
         </DialogContent>
         <DialogActions>
-          <Button>This action</Button>
+          <Button>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>
