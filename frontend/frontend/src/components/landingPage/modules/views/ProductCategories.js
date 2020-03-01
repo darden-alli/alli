@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
@@ -85,6 +86,7 @@ const styles = theme => ({
 
 function ProductCategories(props) {
   const { classes } = props;
+  const location = useLocation();
 
   const images = [
     {
@@ -92,30 +94,35 @@ function ProductCategories(props) {
         'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
       title: 'Medical Care',
       width: '40%',
+      path: 'medical'
     },
     {
       url:
         'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
       title: 'Police Reporting',
       width: '20%',
+      path: 'police'
     },
     {
       url:
         'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
       title: 'Advocacy and Counseling',
       width: '40%',
+      path: 'counseling'
     },
     {
       url:
         'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
       title: 'University Reporting',
       width: '50%',
+      path: 'reporting'
     },
     {
       url:
         'https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80',
       title: 'University Support',
       width: '50%',
+      path: 'support'
     },
   ];
 
@@ -129,6 +136,8 @@ function ProductCategories(props) {
             style={{
               width: image.width,
             }}
+            type='button'
+            href={`${location.pathname}/${image.path}`}
           >
             <div
               className={classes.imageSrc}

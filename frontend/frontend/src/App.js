@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 //import Home from './components/Home';
 import SchoolPage from './components/schoolPage';
@@ -12,6 +13,9 @@ import Privacy from './components/landingPage/Privacy';
 import Admin from './components/Admin';
 import Resources from './components/Resources';
 import About from './components/About';
+import Counseling from './components/Counseling';
+import Medical from './components/Medical';
+import Perk from './components/Perk';
 import Error from './components/Error';
 import './App.css';
 
@@ -114,11 +118,13 @@ class App extends Component {
             <Route path="/terms" component={Terms} />
             <Route path="/privacy" component={Privacy} />
             {SCHOOLS.map(school => (
-              <Route path={"/"+school.shortName} key={school.shortName}>
-                <SchoolPage school={school} />
-              </Route>
+              <Route
+                exact
+                path={"/"+school.shortName}
+                render={(props) => <SchoolPage school={school} />}
+                key={school.shortName}
+              />
             ))}
-            <Route component={Error} />
           </Switch>
         </Router>
       </div>
