@@ -11,13 +11,8 @@ import Index from './components/landingPage/Home';
 import Terms from './components/landingPage/Terms';
 import Privacy from './components/landingPage/Privacy';
 import Admin from './components/Admin';
-import Resources from './components/Resources';
+import Resource from './components/Resource';
 import About from './components/About';
-import Medical from './components/resources/Medical';
-import Police from './components/resources/Police';
-import Counseling from './components/resources/Counseling';
-import Reporting from './components/resources/Reporting';
-import Support from './components/resources/Support';
 import Perk from './components/resources/Perk';
 import './App.css';
 
@@ -95,13 +90,7 @@ const SCHOOLS = [
     launched: false
   }
 ]
-const RESOURCE_TYPES = [
-  {type: 'medical', component: Medical},
-  {type: 'police', component: Police},
-  {type: 'counseling', component: Counseling},
-  {type: 'reporting', component: Reporting},
-  {type: 'support', component: Support}
-]
+const RESOURCE_TYPES = ['medical', 'police', 'counseling', 'reporting', 'support']
 
 class App extends Component {
   constructor() {
@@ -137,7 +126,6 @@ class App extends Component {
             <Route exact path="/" component={Index} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" component={Admin} />
-            <Route exact path="/resources" component={Resources} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/privacy" component={Privacy} />
             {SCHOOLS.map(school => (
@@ -152,9 +140,9 @@ class App extends Component {
               RESOURCE_TYPES.map(resource => (
                 <Route
                   exact
-                  path={"/"+school.shortName+"/"+resource.type}
-                  key={"/"+school.shortName+"/"+resource.type}
-                  component={resource.component}
+                  path={"/"+school.shortName+"/"+resource}
+                  key={"/"+school.shortName+"/"+resource}
+                  render={(props) => <Resource type={resource} />}
                 />
               ))
             ))}

@@ -7,6 +7,7 @@ import ProductValues from './landingPage/modules/views/ProductValues';
 import ProductCategories from './landingPage/modules/views/ProductCategories';
 import AppAppBar from './landingPage/modules/views/AppAppBar';
 
+
 function SchoolPage(props) {
   const mainNotFound="Oh no!";
   const secondaryNotFound=`We're not at ${props.school.fullName} yet,
