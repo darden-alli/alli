@@ -55,58 +55,92 @@ const data = {
   ]},
   police: {title: 'Law Enforcement', data: [
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
   ]},
   counseling: {title: 'Counseling & Advising', data: [
     {
-      question: ,
-      answer:
+      question: "What are my expenses?",
+      answer: `During the school year, you will not be charged for visits to CAPS.
+      Appointment costs are covered by your Student Health Fee. Over the summer,
+      CAPS charges $10 per visit. Medication and testing costs are covered by
+      your student health insurance.`
     },
     {
-      question: ,
-      answer:
+      question: "How do I maintain my privacy?",
+      answer: `Your appointment & results remain confidential between you & your
+      healthcare provider. Upon request, you may have your health insurance charges
+      encoded to maintain privacy. You do not have to report to the university or
+      police if you seek couseling services.`
     },
     {
-      question: ,
-      answer:
+      question: "What services are provided?",
+      answer: `Group Therapy, Individual Therapy, Psyciatric Services,
+      and Emergency & Crisis Services.`
     },
+    {
+      question: "How do I schedule an appointment?",
+      answer: `Before starting services, you must first schedule a 15 minute phone
+      screening at (434) 243-5150. Ask to schedule a CAPS screening.
+      Your intake meeting will be scheduled afterwards. You can also drop-in
+      during business hours to meet with the Emergency Consult Clinician.`
+    },
+    {
+      question: "What if I'm having a crisis?",
+      answer: `CAPS offers 24/7 crisis services & consultation. For business hours,
+      drop-in and ask to speak with the Emergency Consult Clinician. For after-hours
+      crisis consultation, call (434) 243-5150 and speak with the on call counselor.
+      If you are having suicidal thoughts or experiencing a medical emergency call 911.`
+    },
+    {
+      question: "What should I expect in the screening?",
+      answer: `The scheduled phone screening takes between 15-20 minutes. You
+      will be asked why you decided to contact CAPS, what you need help with,
+      and how you are functioning. You will be asked about sleep, energy level,
+      academic performance, appetite, thoughts of self-harm or harm to others,
+      and substance use.`
+    },
+    {
+      question: "Where is CAPS?",
+      answer: `Elson Student Health Center, 400 Brandon Avenue,
+      Charlottesville, VA 22908`
+    }
   ]},
   reporting: {title: 'University Reporting', data: [
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
   ]},
   support: {title: 'University Support', data: [
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
     {
-      question: ,
-      answer:
+      question: "",
+      answer: ""
     },
   ]}
 };
