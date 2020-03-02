@@ -13,7 +13,6 @@ import Privacy from './components/landingPage/Privacy';
 import Admin from './components/Admin';
 import Resource from './components/Resource';
 import About from './components/About';
-import Perk from './components/resources/Perk';
 import './App.css';
 
 const API_ROUTE = '/api/v1';
